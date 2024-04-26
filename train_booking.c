@@ -5,14 +5,8 @@
 
 //train details
 typedef struct {
-    int serial_number;
-    char destination[50];
-    char train_route[50];
-    int train_number;
-    char departure_time[10];
-    char arrival_time[10];
-    char date[11];
-    int platform_number;
+    int serial_number,train_number,platform_number;
+    char destination[50],train_route[50],departure_time[10],arrival_time[10],date[11];
     float distance; 
 } Train;
 
