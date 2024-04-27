@@ -6,7 +6,7 @@
 // Train details
 typedef struct {
     int serial_number, train_number, platform_number;
-    char boarding[50], destination[50], train_name[50], departure_time[10], arrival_time[10], date[11], distance; 
+    char boarding[50], destination[50], train_name[50], departure_time[10], arrival_time[10], date[11], distance[10]; // Corrected: Changed char to char array
 } Train;
 
 // Passenger details
@@ -39,7 +39,7 @@ void displayAvailableSeats(char compartment_class[], int num_seats) {
         printf("\n\nCOUPES:\n");
         for (int i = 6; i <= 8; i++) {
             printf("%-5d", i);
-            if (i % 8 == 0) 
+            if (i % 8 == 0)
                 printf("\n");
         }
         printf("\n");
@@ -55,7 +55,7 @@ void displayAvailableSeats(char compartment_class[], int num_seats) {
         printf("\n");
     } else if (strcmp(compartment_class, "GENERAL COMPARTMENT") == 0) {
         printf("SEATS:\n");
-        for (int i = 1; i <= num_seats; i++) {
+        for (int i = 1; i <= num_seats; i++) { // Corrected: Use num_seats instead of undeclared variable
             printf("%-5d", i);
             if (i % 10 == 0) // New line after every 10 seats
                 printf("\n");
@@ -115,7 +115,7 @@ int main() {
     system("clear");
 
     // Display available seats based on selected compartment class
-    displayAvailableSeats(compartment_class, num_seats);
+    displayAvailableSeats(compartment_class, 50); // Assuming 50 seats in each compartment
 
     // Display additional information for passenger details input
     printf("TRAIN NAME: %s\n", trains[selected_train - 1].train_name);
@@ -202,4 +202,3 @@ int main() {
 
     return 0;
 }
-
