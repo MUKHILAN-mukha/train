@@ -1,0 +1,39 @@
+Code Report: Train Ticket Booking System
+
+1.Introduction:
+This report evaluates a C program designed to facilitate train ticket booking.
+The system allows users to select a train, compartment class, and seat, input 
+passenger details, and generates a ticket with PNR number and fare calculation.
+
+2.Code Structure:
+*The code consists of several sections:
+*Definitions of necessary libraries (`stdio.h`, `stdlib.h`, etc.).
+*Structs for storing train and passenger details.
+*Functions for displaying available trains, seats, loading animation, and generating PNR.
+*The `main()` function orchestrates the entire ticket booking process.
+
+3.Key Features:
+*Modular Design: The code is divided into functions, each responsible for a specific task,
+ promoting code readability and maintainability.
+*Dynamic Input: Users can input details such as train selection, compartment class, and 
+ seat number interactively through the terminal.
+*Visual Presentation: The use of ANSI escape codes (`\033[0m`, `\033[0;31m`, etc.) enhances
+ the visual appeal of the output, providing color-coded information to users.
+*Loading Animation: During ticket processing, a loading animation is displayed, adding a 
+ user-friendly feature to the system.
+
+4.Functionality:
+*Display Available Trains: The `displayTrains()` function presents a tabular view of available
+ trains, including details such as train number, departure time, and platform number.
+*Select Compartment and Seat: Users can choose the compartment class (first class, sleeper 
+ class, or general compartment) and seat number from the available options.
+*Input Passenger Details: The system prompts users to enter passenger details like name, 
+ age, and gender for each ticket.
+*Generate Ticket: After inputting all necessary information, the system generates a ticket 
+ with a unique PNR number and displays passenger details along with fare calculation.
+
+5.Conclusion:
+ The provided C program offers a functional train ticket booking system with interactive 
+ features and visual enhancements. 
+ With some refinements in user interface, it can provide a seamless experience for users booking 
+ train tickets through the terminal.
