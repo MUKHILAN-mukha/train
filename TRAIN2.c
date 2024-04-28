@@ -93,14 +93,14 @@ int generatePNR() {
 
 int main() {
     Train trains[] = {
-        {1, 12243, 1, "CHENNAI EGMORE(MS)", "COIMBATORE(CBE)", "Coimbatore Shatabdi Express", "08:00", "10:00", "08/05/2024", "484 KM"},
-        {2, 12634, 2, "CHENNAI EGMORE(MS)", "KANYAKUMARI(CAPE)", "Kanyakumari Express", "09:00", "11:30", "08/05/2024", "746 KM"},
-        {3, 12653, 3, "CHENNAI EGMORE(MS)", "THIRUCHIRAPALLI(TPJ)", "Tiruchirappalli Rockfort Express", "10:30", "13:00", "09/05/2024", "312 KM"},
-        {4, 16344, 2, "CHENNAI EGMORE(MS)", "NAGERCOIL(NJT)", "Nagercoil Guruvayur Express", "10:30", "13:00", "09/05/2024", "726 KM"},
-        {5, 12605, 3, "CHENNAI EGMORE(MS)", "KARAIKUDI (KKDI)", "Karaikudi Pallavan Express", "10:30", "13:00", "08/05/2024", "426 KM"},
-        {6, 12637, 1, "CHENNAI EGMORE(MS)", "MADURAI (MDU)", "Madurai Pandian Express", "10:30", "13:00", "09/05/2024", "493 KM"},
-        {7, 16184, 3, "CHENNAI EGMORE(MS)", "THANJAVUR (TJ)", "Thanjavur Uzhavan Express", "10:30", "13:00", "10/05/2024", "351 KM"},
-        {8, 16182, 2, "CHENNAI EGMORE(MS)", "KUMBAKONAM (KMU)", "Kumbakonam Express", "10:30", "13:00", "10/05/2024", "312 KM"}
+        {1, 12243, 1, "CHENNAI EGMORE(MS)", "COIMBATORE(CBE)", "COIMBATORE SHATABDI EXPRESS", "08:00", "10:00", "08/05/2024", "484 KM"},
+        {2, 12634, 2, "CHENNAI EGMORE(MS)", "KANYAKUMARI(CAPE)", "KANYAKUMARI EXPRESS", "09:00", "11:30", "08/05/2024", "746 KM"},
+        {3, 12653, 3, "CHENNAI EGMORE(MS)", "THIRUCHIRAPALLI(TPJ)", "THIRUCHIRAPPALI ROCKFORT EXPRESS", "10:30", "13:00", "09/05/2024", "312 KM"},
+        {4, 16344, 2, "CHENNAI EGMORE(MS)", "NAGERCOIL(NJT)", "NAGERCOIL GURUVAYUR EXPRESS", "10:30", "13:00", "09/05/2024", "726 KM"},
+        {5, 12605, 3, "CHENNAI EGMORE(MS)", "KARAIKUDI (KKDI)", "KARAIKUDI PALLAVAN EXPRESS", "10:30", "13:00", "08/05/2024", "426 KM"},
+        {6, 12637, 1, "CHENNAI EGMORE(MS)", "MADURAI (MDU)", "MADURAI PANDIAN EXPRESS", "10:30", "13:00", "09/05/2024", "493 KM"},
+        {7, 16184, 3, "CHENNAI EGMORE(MS)", "THANJAVUR (TJ)", "THANJAVUR UZHAVAN EXPRESS", "10:30", "13:00", "10/05/2024", "351 KM"},
+        {8, 16182, 2, "CHENNAI EGMORE(MS)", "KUMBAKONAM (KMU)", "KUMBAKONAM EXPRESS", "10:30", "13:00", "10/05/2024", "312 KM"}
     };
     int num_trains = sizeof(trains) / sizeof(trains[0]);
 
@@ -188,50 +188,50 @@ int main() {
 
 	system("cls");
     // Print combined ticket details
-    printf("\n=================================================================");
-    printf("\n                    	TICKET DETAILS							   ");
-    printf("\n=================================================================");
-    printf("\n%s ---------------------------------------------------------- %s", trains[selected_train - 1].boarding, trains[selected_train - 1].destination);
-    printf("\n(%s)----------------------------(%s)------------------------(%s)", trains[selected_train - 1].departure_time, trains[selected_train - 1].distance), trains[selected_train - 1].arrival_time);
-    printf("\nPNR NUMBER			TRAIN NAME/TRAIN NO.			DATE OF BOARDING");
-	printf("\n(%d)    		(%s)/			(%s)",pnr,trains[selected_train - 1].train_name,trains[selected_train - 1].date);
-    printf("\n				(%d)",trains[selected_train - 1].train_number);
+    printf( YELLOW"\n=================================================================" RESET);
+    printf( RED"\n                    	TICKET DETAILS							   " RESET);
+    printf(YELLOW "\n=================================================================" RESET);
+    printf(BLUE "\n%s" RESET YELLOW"----------------------------------------------------------" RESET BLUE"%s" RESET, trains[selected_train - 1].boarding, trains[selected_train - 1].destination);
+    printf(BLUE"\n(%s) 				(%s)			  (%s)" RESET, trains[selected_train - 1].departure_time, trains[selected_train - 1].distance), trains[selected_train - 1].arrival_time);
+    printf(BLUE "\nPNR NUMBER			TRAIN NAME/TRAIN NO.			DATE OF BOARDING" RESET);
+    printf(YELLOW "\n(%d)    		(%s)/			(%s) RESET",pnr,trains[selected_train - 1].train_name,trains[selected_train - 1].date);
+    printf(YELLOW "\n				(%d)" RESET,trains[selected_train - 1].train_number);
     printf("\n");
-    printf("+-----------------------+-----+-------+-----------+------------------+-------------+----------------+\n");
-    printf("|    PASSENGER NAME     | AGE | GENDER| COMP.CLASS|   SEAT TYPE      | SEAT NUMBER |  COMPARTMENT   |\n");
-    printf("+-----------------------+-----+-------+-----------+------------------+-------------+----------------+\n");
+    printf(BLUE "+-----------------------+-----+-------+-----------+------------------+-------------+----------------+\n" RESET);
+    printf(BLUE "|" RESET    YELLOW "PASSENGER NAME" RESET    BLUE "|" RESET YELLOW "AGE" RESET BLUE "|" RESET YELLOW "GENDER" RESET BLUE "|" RESET YELLOW "COMP.CLASS" RESET BLUE "|" RESET  YELLOW "SEAT TYPE" RESET    BLUE "|" RESET YELLOW "SEAT NUMBER" RESET BLUE "|" RESET YELLOW "COMPARTMENT" RESET  BLUE "|\n" RESET );
+    printf(BLUE "+-----------------------+-----+-------+-----------+------------------+-------------+----------------+\n" RESET);
     for (int i = 0; i < num_tickets; i++) {
-        printf("|   %-20s | %-3d | %-5s | %-9s | %-16s | %-11d | %-14d |\n", passengers[i].name, passengers[i].age, passengers[i].gender, passengers[i].compartment_class,
+        printf(BLUE "|" RESET   YELLOW "%-20s" RESET BLUE "|" RESET YELLOW "%-3d" RESET BLUE "|" RESET YELLOW "%-5s" RESET BLUE "|" RESET YELLOW "%-9s" RESET BLUE "|" RESET YELLOW "%-16s" RESET BLUE "|" RESET YELLOW "%-11d" RESET BLUE "|" RESET YELLOW "%-14d" RESET BLUE "|\n" RESET, passengers[i].name, passengers[i].age, passengers[i].gender, passengers[i].compartment_class,
                passengers[i].seat_type, passengers[i].seat_number, compartment_number);
     }
-    printf("+-----------------------+-----+-------+-----------+------------------+-------------+----------------+\n");
+    printf(BLUE "+-----------------------+-----+-------+-----------+------------------+-------------+----------------+\n" RESET);
     printf("\n");
     
     // Calculate and display total fare
     float total_fare = 0.0;
-    printf("=================================================================\n");
-    printf("                    TOTAL FARE CALCULATION\n");
-    printf("=================================================================\n");
-    printf("| SEAT TYPE       | FARE PER HEAD | NO. OF PASSENGERS | TOTAL FARE |\n");
-    printf("-----------------------------------------------------------------\n");
+    printf(BLUE "=================================================================\n" RESET);
+    printf(YELLOW "                    TOTAL FARE CALCULATION\n" RESET);
+    printf(BLUE "=================================================================\n" RESET);
+    printf(BLUE "|" RESET YELLOW "SEAT TYPE" RESET     BLUE "|" RESET YELLOW "FARE PER HEAD" RESET BLUE "|" RESET YELLOW "NO. OF PASSENGERS" RESET BLUE "|" RESET YELLOW "TOTAL FARE" REST BLUE "|" RESET\n");
+    printf(BLUE "-----------------------------------------------------------------\n" RESET);
    if (strcmp(compartment_class, "FIRST CLASS") == 0) {
         if (strcmp(passengers[0].seat_type, "CABIN") == 0) {
-            printf("| CABIN           | Rs. 1671      | x %d               | Rs. %.2f |\n", num_tickets, 1671.0 * num_tickets);
+            printf(BLUE "|" RESET YELLOW "CABIN" RESET          BLUE "|" RESET YLLOW "Rs. 1671" RESET     BLUE "|" RESET YELLOW "x %d" RESET             BLUE "|" RESET YELLOW "Rs. %.2f" RESET BLUE "|\n" RESET, num_tickets, 1671.0 * num_tickets);
             total_fare += 1671 * num_tickets;
         } else if (strcmp(passengers[0].seat_type, "COUPE") == 0) {
-            printf("| COUPE           | Rs. 836       | x %d               | Rs. %.2f |\n", num_tickets, 836.0 * num_tickets);
+            printf(BLUE "|" RESET YELLOW "COUPE" RESET         BLUE "|" RESET YELLOW "Rs. 836" RESET     BLUE "|" RESET YELLOW "x %d" RESET             BLUE "|" RESET YELLOW "Rs. %.2f" RESET BLUE "|\n" RESET, num_tickets, 836.0 * num_tickets);
             total_fare += 836 * num_tickets;
         }
     } else if (strcmp(compartment_class, "SLEEPER CLASS") == 0) {
-        printf("| SLEEPER BERTH   | Rs. 447       | x %d               | Rs. %.2f     |\n", num_tickets, 447.0 * num_tickets);
+        printf(BLUE "|" RESET YELLOW "SLEEPER BERTH" RESET   BLUE "|" RESET YELLOW "Rs. 447" RESET      BLUE "|" RESET YELLOW "x %d" RESET              BLUE "|" RESET YELLOW "Rs. %.2f" RESET   BLUE "|\n" RESET, num_tickets, 447.0 * num_tickets);
         total_fare += 447 * num_tickets;
     } else if (strcmp(compartment_class, "GENERAL COMPARTMENT") == 0) {
-        printf("| SEATER          | Rs. 438       | x %d               | Rs. %.2f     |\n", num_tickets, 438.0 * num_tickets);
+        printf(BLUE "|" RESET YELLOW "SEATER" RESET        BLUE "|" RESET YELLOW "Rs. 438" RESET     BLUE "|" RESET YELLOW "x %d" RESET             BLUE "|" RESET YELLOW "Rs. %.2f" RESET   BLUE "|\n" RESET, num_tickets, 438.0 * num_tickets);
         total_fare += 438 * num_tickets;
     }
-    printf("-----------------------------------------------------------------\n");
-    printf("| TOTAL FARE      |                   |                    | Rs. %.2f     |\n", total_fare);
-    printf("-----------------------------------------------------------------\n");
+    printf(BLUE "-----------------------------------------------------------------\n" RESET);
+    printf(BLUE "|" RESET YELLOW "TOTAL FARE" RESET    BLUE "|" RESET                 BLUE "|" RESET                  BLUE "|" RESET YELLOW "Rs. %.2f" RESET     BLUE "|\n" RESET, total_fare);
+    printf(BLUE "-----------------------------------------------------------------\n" RESET);
 
     return 0;
 }
