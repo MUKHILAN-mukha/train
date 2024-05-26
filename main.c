@@ -13,17 +13,17 @@ int main() {
         case 1:
             // Call bus ticket booking function
             system("gcc -o bus bus.c");
-            system("C:/Users/MUKHIL/Downloads/bus");//location of the executable file
+            system("C:/Users/MUKHIL/E:/bus");//location of the executable file
             break;
         case 2:
             // Call flight ticket booking function
             system("gcc -o flight flight.c");
-            system("C:/Users/MUKHIL/Downloads/flight");//location of the executable file
+            system("C:/Users/MUKHIL/E:/flight");//location of the executable file
             break;
         case 3:
             // Call train ticket booking function
             system("gcc -o train train.c");
-            system("C:/Users/MUKHIL/Downloads/train");//location of the executable file
+            system("C:/Users/MUKHIL/E:/train");//location of the executable file
             break;
         default:
             printf("Invalid choice\n");
